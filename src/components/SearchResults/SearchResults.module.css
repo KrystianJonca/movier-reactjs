@@ -1,0 +1,16 @@
+.searchresults {
+  margin-top: 50px;
+  width: 550px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchresults p {
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .searchresults {
+    width: 250px;
+  }
+}

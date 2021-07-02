@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
+import WelcomePage from './components/Pages/WelcomePage';
+import SearchResultPage from './components/Pages/SearchResultPage';
 import './App.css';
 
-function App() {
+function App(props) {
+  const [searchQuery, setSearchQuery] = useState();
+  const location = useLocation();
+
+  const submitHandler = (value) => {
+    setSearchQuery(value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <TransitionGroup>
+        <CSSTransition key={location.key} timeout={300} classNames="fade">
+          <Switch location={location}>
+            <Route exact path="/">
+              <WelcomePage onSubmit={submitHandler} />
+            </Route>
+            <Route exact path="/search">
+              <SearchResultPage value={searchQuery} />
+            </Route>
+            <Route path="*">
+              <Redirect to="/"></Redirect>
+            </Route>
+          </Switch>
+        </CSSTransition>
+      </TransitionGroup>
+    </>
   );
 }
 
