@@ -6,25 +6,22 @@ const useFetch = (url) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    let mounted = true;
     setIsLoading(true);
-    if (mounted) {
-      const fetchData = async () => {
-        setData([]);
-        setError('');
+    const fetchData = async () => {
+      setError('');
+      setData([]);
+      try {
         const response = await fetch(url);
         const dataBuffer = await response.json();
         setData(dataBuffer.Search);
         setIsLoading(false);
         if (dataBuffer.Error)
           setError(`Sorry something is wrong: ${dataBuffer.Error}`);
-      };
-      fetchData();
-    }
-
-    return () => {
-      mounted = false;
+      } catch (e) {
+        setError(`Error while sending request: ${e}`);
+      }
     };
+    fetchData();
   }, [url]);
 
   return { data, isLoading, error };
