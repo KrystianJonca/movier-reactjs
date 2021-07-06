@@ -1,13 +1,15 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import classes from './SearchForm.module.css';
 
 const SearchForm = (props) => {
   const history = useHistory();
+  const location = useLocation();
+
   const submitHandler = (event) => {
     event.preventDefault();
     props.onSubmit(event.target[0].value);
-    history.push('/search');
+    if (!location.pathname.includes('/search')) history.push('/search');
   };
 
   return (
