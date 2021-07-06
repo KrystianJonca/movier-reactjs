@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard';
-import useFetch from '../../useFetch';
+import useFetch from '../../hooks/useFetch';
 import classes from './SearchResults.module.css';
 
 const API_KEY = '6bab6ee3';
