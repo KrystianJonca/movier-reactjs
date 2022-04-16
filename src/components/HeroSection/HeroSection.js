@@ -8,7 +8,7 @@ const HeroSection = (props) => {
       <div className={classes.hero_container}>
         <div className={classes.hero_info}>
           <h1 className={classes.hero_title}>Movier</h1>
-          <p className={classes.hero_text}>Search for Your fav movies!</p>
+          <p className={classes.hero_text}>Search For Your Favorite Movies!</p>
           <SearchForm onSubmit={props.onSubmit} dark={true} />
         </div>
       </div>

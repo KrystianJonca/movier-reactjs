@@ -17,6 +17,10 @@
   color: #000;
 }
 
+.search_footer {
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .search_title {
     font-size: 3rem;

@@ -3,6 +3,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import SearchResults from '../SearchResults/SearchResults';
 import classes from './SearchResultPage.module.css';
 import { Link } from 'react-router-dom';
+
 const SearchResultPage = (props) => {
   const [searchQuery, setSearchQuery] = useState(
     props.value ? props.value : ''
@@ -27,7 +28,9 @@ const SearchResultPage = (props) => {
           <p>Please search for movies ;)</p>
         )}
       </main>
-      <footer className={classes.search_footer}></footer>
+      <footer className={classes.search_footer}>
+        Created by Krystian Jonca
+      </footer>
     </div>
   );
 };
