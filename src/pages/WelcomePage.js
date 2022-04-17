@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSection from '../HeroSection/HeroSection';
+import HeroSection from '../components/HeroSection/HeroSection';
 
 const WelcomePage = (props) => {
   return (

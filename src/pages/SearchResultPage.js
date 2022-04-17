@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SearchForm from '../SearchForm/SearchForm';
-import SearchResults from '../SearchResults/SearchResults';
+import SearchForm from '../components/SearchForm/SearchForm';
+import SearchResults from '../components/SearchResults/SearchResults';
 import classes from './SearchResultPage.module.css';
 import { Link } from 'react-router-dom';
 

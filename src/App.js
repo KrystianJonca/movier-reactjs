@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
-import WelcomePage from './components/Pages/WelcomePage';
-import SearchResultPage from './components/Pages/SearchResultPage';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import WelcomePage from './pages/WelcomePage';
+import SearchResultPage from './pages/SearchResultPage';
 import './App.css';
 
 function App(props) {
@@ -17,17 +17,17 @@ function App(props) {
     <>
       <TransitionGroup>
         <CSSTransition key={location.key} timeout={300} classNames="fade">
-          <Switch location={location}>
-            <Route exact path="/">
-              <WelcomePage onSubmit={submitHandler} />
-            </Route>
-            <Route exact path="/search">
-              <SearchResultPage value={searchQuery} />
-            </Route>
-            <Route path="*">
-              <Redirect to="/"></Redirect>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route
+              path="/"
+              element={<WelcomePage onSubmit={submitHandler} />}
+            />
+            <Route
+              path="/search"
+              element={<SearchResultPage value={searchQuery} />}
+            />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
         </CSSTransition>
       </TransitionGroup>
     </>
