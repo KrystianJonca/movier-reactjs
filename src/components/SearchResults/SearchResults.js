@@ -3,7 +3,7 @@ import MovieCard from './MovieCard';
 import useFetch from '../../hooks/useFetch';
 import classes from './SearchResults.module.css';
 
-const API_KEY = '6bab6ee3';
+const API_KEY = process.env.REACT_APP_API_KEY;
 const API = `http://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}`;
 
 const SearchResults = (props) => {
