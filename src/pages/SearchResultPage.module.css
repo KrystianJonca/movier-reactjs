@@ -1,0 +1,29 @@
+.search_header {
+  color: #000;
+  text-align: center;
+  margin: 0 auto;
+  padding: 25px;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+.search_main {
+  text-align: center;
+}
+.search_title {
+  font-size: 5rem;
+  margin: 5px;
+}
+.search_title_link {
+  text-decoration: none;
+  color: #000;
+}
+
+.search_footer {
+  margin: 16px 0px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .search_title {
+    font-size: 3rem;
+  }
+}
