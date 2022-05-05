@@ -22,9 +22,9 @@ const SearchResults = (props) => {
         movies.map((movie) => {
           if (movie.Poster !== 'N/A') {
             return (
-              <>
-                <MovieCard key={Math.random()} movieData={movie} />
-              </>
+              <div key={Math.random()}>
+                <MovieCard movieData={movie} />
+              </div>
             );
           }
           return '';

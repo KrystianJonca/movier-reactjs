@@ -24,7 +24,7 @@ const MovieCard = (props) => {
         rel="noreferrer"
         target="_blank"
       >
-        <MovieCardStyled key={Math.random()} poster={props.movieData.Poster} />
+        <MovieCardStyled poster={props.movieData.Poster} />
       </a>
     </>
   );
